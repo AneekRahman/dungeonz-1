@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>dungeon - Connecting ON</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Aneek Rahman">
+        <meta name="keywords" content="dungeon,social,website,connect,people,friends,family,follow">
+        <meta name="description" content="dungeon - Connecting On People!">
+        <link href="css/indexStyle.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto:300,400,700|Rubik:300,400,500" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+        <header id="logoBar">
+            <div id="logoBarDiv">
+                <div class="catExpandIcon">
+                    <i class="fa fa-bars" aria-hidden="true" id="catIcon"></i>
+                    <div class="tooltip catIconTip">
+                        <p>Show explore tab</p>
+                    </div>
+                </div>
+                <div class="logoHolder">
+                    <a href="index.html">
+                        <img src="icons/dungeonLogo.png" draggable="false" id="logo">
+                    </a>
+                </div>
+                <div id="topSearch">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input name="topSearch" type="search" placeholder="Search dungeon">
+                    <div class="tooltip searchBarTip">
+                        <p>Search dungeon.com</p>
+                    </div>
+                </div>
+                <div id="logIconHolder">
+                    <i class="fa fa-user-circle" aria-hidden="true" id="userBtn"></i>
+                    <div class="tooltip logIconTip">
+                        <p>Log In Status</p>
+                    </div>
+                    <div id="loginExpand">
+                        <div class="nameHolder">
+                            <h1 id="name">NOT LOGGED IN</h1>
+                        </div>
+                        <div id="logBtnHolder">
+                            <button>Log In | Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="navBar">
+                    <ul>
+                        <a href="#"><li id="logTabIcon"><i class="fa fa-cube" aria-hidden="true"></i> Log In</li></a>
+                        <div class="tooltip logTabTip">
+                            <p>Log into dungeon.com</p>
+                        </div>
+                        <a href="#"><li id="picturesIcon"><i class="fa fa-camera-retro" aria-hidden="true"></i> Pictures</li></a>
+                        <div class="tooltip picturesTip">
+                            <p>See pictures on dungeon.com</p>
+                        </div>
+                        <a href="#"><li id="videosIcon"><i class="fa fa-video-camera" aria-hidden="true"></i> Videos</li></a>
+                        <div class="tooltip videosTip">
+                            <p>Watch videos on dungeon.com</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="catHolder">
+            <ul id="catUl">
+                <h4><i class="fa fa-eercast" aria-hidden="true"></i> Explore dungeon:</h4>
+                <a href="#"><li><i class="fa fa-users" aria-hidden="true"></i> activists</li></a>
+                <a href="#"><li><i class="fa fa-rocket" aria-hidden="true"></i> clubs</li></a>
+                <a href="#"><li><i class="fa fa-id-badge" aria-hidden="true"></i> pages</li></a>
+                <a href="#"><li><i class="fa fa-calendar-o" aria-hidden="true"></i> Events</li></a>
+                <a href="#"><li><i class="fa fa-shopping-cart" aria-hidden="true"></i> shop</li></a>
+                <a href="#"><li><i class="fa fa-gamepad" aria-hidden="true"></i> games</li></a>
+                <a href="#"><li><i class="fa fa-check-square-o" aria-hidden="true"></i> live</li></a>
+                <h4><i class="fa fa-diamond" aria-hidden="true"></i> Start out:</h4>
+                <a href="#"><li><i class="fa fa-briefcase" aria-hidden="true"></i> start a business</li></a>
+                <a href="#"><li><i class="fa fa-desktop" aria-hidden="true"></i> start a page</li></a>
+                <a href="#"><li><i class="fa fa-calendar" aria-hidden="true"></i> start an event</li></a>
+                <a href="#"><li><i class="fa fa-universal-access" aria-hidden="true"></i> Start a club</li></a>
+                <a href="#"><li><i class="fa fa-handshake-o" aria-hidden="true"></i> start a trade</li></a>
+                <a href="#"><li><i class="fa fa-check-square-o" aria-hidden="true"></i> Go live</li></a>
+            </ul>
+        </div>
+        <section id="jumbotron">
+            <div id="jumboWrap">
+                <div id="signUpBox">
+                    <button onclick="scrollAcc()">Create an Account</button>
+                </div>
+                <div id="theOr">
+                    <h1>OR</h1>
+                </div>
+                <div id="loginBox">
+                    <form action="php/indexLogIn.php" method="post">
+                        <h1>Log In</h1>
+                        <div id="logHeadBorder"></div>
+                        <h2>E-mail or username:</h2>
+                        <input type="email" name="logEmail" autofocus>
+                        <h2>Password:</h2>
+                        <input type="password" name="logPass">
+                        <a href="#">Forgot Password?</a>
+                        <button type="submit" id="loginBoxBtn">Login</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="createAcc">
+            <div id="createAccHolder">
+                <div class="createAccSide">
+                    <h1>Create your <span>dungeon</span> account and Connect ON!</h1>
+                </div>
+                <div class="createAccBox">
+                    <h1>Create Account</h1>
+                    <div id="accHolder">
+                    <form action="php/indexCreateAcc.php" method="post" onsubmit="accSubmit(event)">
+                        <h2>Your Full Name:</h2>
+                        <input type="text" name="accName" required>
+                        <h2>Set New Username:</h2>
+                        <input type="text" name="accUsername" required>
+                        <div class="checkCross userCC">
+                            <i class="fa fa-check userCheck" aria-hidden="true"></i>
+                            <i class="fa fa-times userTimes" aria-hidden="true"></i>
+                        </div>
+                        <h2>Your Email Address:</h2>
+                        <input type="email" name="accEmail" required>
+                        <h2>Set New Password:</h2>
+                        <input type="password" name="accPass" required>
+                        <div class="checkCross passCC">
+                            <i class="fa fa-check passCheck" aria-hidden="true"></i>
+                            <i class="fa fa-times passTimes" aria-hidden="true"></i>
+                        </div>
+                        <h2>Your Birth Date:</h2>
+                        <select name="accBirthDate">
+                            <option value="0">Day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                        </select>
+                        <select name="accBirthMonth">
+                            <option value="0">Month</option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sept</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
+                        </select>
+                        <select name="accBirthYear">
+                            <option value="0">Year</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option>
+                        </select>
+                        <p>By clicking "Create Account" you agree with our terms and policies.</p>
+                        <button type="submit" id="createBtn">Create Account<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></button> 
+                    </form>
+                    </div>
+                    <div class="accTip accUNTaken">
+                        <p>Username taken. Try another.</p>
+                    </div>
+                    <div class="accTip accUNInfo">
+                        <p>Set a username within 6-32 charecters which doesn't have spaces or commas.</p>
+                    </div>
+                    <div class="accTip accPassError">
+                        <p>Password too short or long or has spaces !</p>
+                    </div>
+                    <div class="accTip accPassInfo">
+                        <p>Set a password within 6-32 charecters which doesn't have spaces or commas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div id="footerHolder">
+                <div class="policies">
+                    <ul>
+                        <h1>Policies:</h1>
+                        <li>Privacy Policy</li>
+                        <li>Cookies Policy</li>
+                        <li>Terms of service</li>
+                        <li>Data Policy</li>
+                        <li>Ad Choices</li>
+                    </ul>
+                </div>
+                <div class="import">
+                    <ul>
+                        <h1>import contacts:</h1>
+                        <li>Facebook</li>
+                        <li>Google Plus</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Linked In</li>
+                    </ul>
+                </div>
+                <div class="languagesWrap">
+                    <h1>dungeon in your language:</h1>
+                    <div class="langs">
+                        <ul>
+                            <li>English (UK)</li>
+                            <li>English (US)</li>
+                            <li>বাংলা</li>
+                            <li>Español</li>
+                            <li>Filipino</li>
+                            <li>हिन्दी</li>
+                            <li>ภาษาไทย</li>
+                            <li>Português (Brasil)</li>
+                            <li>Português (Portugal)</li>
+                            <li>日本語(関西)</li>
+                            <li>日本語</li>
+                            <li>中文(简体)</li>
+                            <li>中文(简体)</li>
+                            <li>Deutsch</li>
+                            <li>Afrikaans</li>
+                            <li>Bahasa Indonesia</li>
+                            <li>العربية</li>
+                            <li>فارسی</li>
+                            <li>Čeština</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerLogo">
+                    <img src="icons/dungeonLogo.png">
+                    <p>connecting on...</p>
+                </div>
+            </div>
+        </footer>
+        <div id="copyright">
+            <p>&copy; Aneek Rahman 2017</p>
+        </div>
+        
+        <!-- INDEX JAVASCRIPT SOURCE LINK -->
+        <script src="javascript/indexJS.js"></script>
+    </body>
+</html>
